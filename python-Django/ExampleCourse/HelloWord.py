@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 print ("Hello World")
 
 #collections and comments
@@ -22,4 +23,27 @@ print notpairNumbers
 print (4 in numbers)
 
 #dictionaries and None value
-cities={'Granada','Sevilla','Córdoba'}
+city={"name":'Granada',"place":"south","population":"12414112"}
+print city["name"]#not a good way to acces dictionaries
+print city.get("name")#GOOD WAY: return name or none if not found that key
+
+
+#functions, brackets, :,;
+#one instruction per line
+#good code indent practice
+
+def print_fruits(fruits):
+    for fruit in fruits:
+        print fruit
+
+
+print_fruits(fruits)
+
+
+#python 2 reads ASCII code by default
+#print("Hola mundo rotísimo)" #syntax error: non-ASCII
+#we can solve this by typing one of the "magic codification line":
+
+# coding=utf-8
+print("Hola mundo rotísimo")
+#python interprets comments also!

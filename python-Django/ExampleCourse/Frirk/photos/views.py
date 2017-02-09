@@ -13,7 +13,7 @@ def home(request):
     # html+='</ul>'
     # return HttpResponse(html)
     context={
-        'photos_list': photos
+        'photos_list': photos[:5]
     }
     return render(request,'photos/home.html',context)
 

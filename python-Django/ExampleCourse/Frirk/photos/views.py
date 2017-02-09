@@ -12,5 +12,8 @@ def home(request):
     #     html+='<li>'+photo.name+'</li>'
     # html+='</ul>'
     # return HttpResponse(html)
-    return render(request,'photos/home.html')
+    context={
+        'photos_list': photos
+    }
+    return render(request,'photos/home.html',context)
 

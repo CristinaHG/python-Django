@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Bienvenido a frikr, como Flickr pero de paisajes</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block section %}
 <h1>Bienvenido a Frikr</h1>
 <p>como Flickr pero de paisajes</p>
 <h2>últimas fotos publicadas</h2>
@@ -18,5 +14,4 @@
     {% else %}
         ¡Sé el primero en publicar una foto!
     {% endif %}
-</body>
-</html>
+{% endblock %}

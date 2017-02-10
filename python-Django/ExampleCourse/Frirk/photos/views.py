@@ -33,3 +33,5 @@ def detail(request,pk):
     else:
         return HttpResponseNotFound() # 404 nto found
 
+
+

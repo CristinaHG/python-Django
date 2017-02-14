@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.http import HttpResponseNotFound
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 from photos.forms import PhotoForm
@@ -38,13 +39,14 @@ def detail(request,pk):
         return HttpResponseNotFound('No existe la foto') # 404 nto found
 
 
-
+@login_required()
 def create(request):
     """
     muestra un form para crear una foto y la crea si la petición es post
      :param request: HttpRequest
      :return: HttpResponse
     """
+
     success_message=''
 
     if request.method=='GET':

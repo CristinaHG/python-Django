@@ -1,6 +1,9 @@
+# -*- coding=utf-8 -*-
+from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.http import HttpResponseNotFound
 from django.shortcuts import render
+from django.core.urlresolvers import reverse
 
 # Create your views here.
 from photos.forms import PhotoForm
@@ -42,8 +45,24 @@ def create(request):
      :param request: HttpRequest
      :return: HttpResponse
     """
-    form=PhotoForm()
+    success_message=''
+
+    if request.method=='GET':
+        form=PhotoForm()
+    else:
+        form=PhotoForm(request.POST)
+        if form.is_valid():
+            new_photo=form.save() #guarda el objeto Photo y me lo devuelves
+            form=PhotoForm()
+            success_message='¡Guardado con éxito!'
+            success_message+='<a href="'+ reverse('photo_detail',[new_photo.pk]) +'">'
+            success_message+='Ver foto'
+            success_message+='</a>'
     context={
-        'form':form
+        'form':form,
+        'success_message': success_message
     }
+
+
+
     return render(request,'photos/new_photo.html',context)

@@ -52,7 +52,9 @@ def create(request):
     if request.method=='GET':
         form=PhotoForm()
     else:
-        form=PhotoForm(request.POST)
+        photo_with_owner=Photo()
+        photo_with_owner.owner=request.user #asigno como propietario de la foto al usuario atuenticado
+        form=PhotoForm(request.POST,instance=photo_with_owner) #especificar instancia de foto a utilizar por el formulario
         if form.is_valid():
             new_photo=form.save() #guarda el objeto Photo y me lo devuelves
             form=PhotoForm()

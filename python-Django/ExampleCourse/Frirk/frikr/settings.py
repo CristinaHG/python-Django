@@ -1,3 +1,5 @@
+# -*- coding=utf-8 -*-
+
 """
 Django settings for frikr project.
 
@@ -141,3 +143,7 @@ LOGGING={
         },
     }
 }
+
+
+#LOGGING URL
+LOGIN_URL='/login' # cuando un usuario no esté autenticado le redirige a /login

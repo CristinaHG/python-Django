@@ -155,4 +155,4 @@ LICENSES=(
 )
 
 #Define badwords
-PROJECT_BADWORDS=['Abollao','Abrazafarolas','Afilasables','Analfabestia','Apollardao','Arrollapastos','Asaltapozos']
+PROJECT_BADWORDS=[u'Abollao',u'Abrazafarolas',u'Afilasables',u'Analfabestia',u'Apollardao',u'Arrollapastos',u'Asaltapozos',u'Caracartón']

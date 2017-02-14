@@ -25,7 +25,7 @@ class PhotoForm(forms.ModelForm):
 
         for badword in BADWORDS:
             if badword.lower() in description:
-                raise ValidationError('La palabra {0} no está permitida'.format(badword))
+                raise ValidationError(u'La palabra {0} no está permitida'.format(badword))
 
 
         #si todo va ok devuelvo datos limpios

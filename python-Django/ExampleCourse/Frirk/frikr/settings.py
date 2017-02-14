@@ -147,3 +147,9 @@ LOGGING={
 
 #LOGGING URL
 LOGIN_URL='/login' # cuando un usuario no esté autenticado le redirige a /login
+
+#LICENSES
+LICENSES=(
+    ('GPL','General Public License'),
+    ('BSD','Berkeley Software Distribution')
+)

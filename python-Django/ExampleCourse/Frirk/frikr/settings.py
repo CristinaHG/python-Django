@@ -153,3 +153,6 @@ LICENSES=(
     ('GPL','General Public License'),
     ('BSD','Berkeley Software Distribution')
 )
+
+#Define badwords
+PROJECT_BADWORDS=['Abollao','Abrazafarolas','Afilasables','Analfabestia','Apollardao','Arrollapastos','Asaltapozos']

@@ -14,3 +14,6 @@ DEFAULT_LICENSES=(
 
 LICENSES=getattr(settings,'LICENSES',DEFAULT_LICENSES)
 
+#exportable variable from aoutside proyect
+
+BADWORDS=getattr(settings,'PROJECT_BADWORDS',[])

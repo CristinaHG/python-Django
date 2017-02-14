@@ -3,6 +3,7 @@ from django.http import HttpResponseNotFound
 from django.shortcuts import render
 
 # Create your views here.
+from photos.forms import PhotoForm
 from photos.models import Photo,PUBLIC
 
 
@@ -35,3 +36,14 @@ def detail(request,pk):
 
 
 
+def create(request):
+    """
+    muestra un form para crear una foto y la crea si la petición es post
+     :param request: HttpRequest
+     :return: HttpResponse
+    """
+    form=PhotoForm()
+    context={
+        'form':form
+    }
+    return render(request,'photos/new_photo.html',context)

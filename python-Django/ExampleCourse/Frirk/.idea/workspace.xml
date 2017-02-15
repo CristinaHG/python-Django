@@ -97,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frikr/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+            <state relative-caret-position="495">
+              <caret line="33" column="40" lean-forward="false" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
               <folding>
                 <element signature="e#640#672#0" expanded="true" />
               </folding>
@@ -119,7 +119,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/users/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="443">
@@ -161,8 +161,8 @@
         <option value="$PROJECT_DIR$/frikr/settings.py" />
         <option value="$PROJECT_DIR$/photos/forms.py" />
         <option value="$PROJECT_DIR$/photos/views.py" />
-        <option value="$PROJECT_DIR$/frikr/urls.py" />
         <option value="$PROJECT_DIR$/users/views.py" />
+        <option value="$PROJECT_DIR$/frikr/urls.py" />
       </list>
     </option>
   </component>
@@ -1068,12 +1068,12 @@
       <workItem from="1486716507560" duration="9835000" />
       <workItem from="1486974429321" duration="11599000" />
       <workItem from="1487062407300" duration="9808000" />
-      <workItem from="1487148759915" duration="4928000" />
+      <workItem from="1487148759915" duration="4995000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50866000" />
+    <option name="totallyTimeSpent" value="50933000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1365" y="0" width="1282" height="1024" extended-state="6" />
@@ -1545,22 +1545,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frikr/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-          <folding>
-            <element signature="e#640#672#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/users/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="443">
           <caret line="45" column="26" lean-forward="true" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
           <folding>
             <element signature="e#22#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frikr/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="40" lean-forward="false" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+          <folding>
+            <element signature="e#640#672#0" expanded="true" />
           </folding>
         </state>
       </provider>

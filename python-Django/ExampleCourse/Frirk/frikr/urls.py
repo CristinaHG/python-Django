@@ -22,7 +22,7 @@ import users
 from users import views
 from photos.views import HomeView
 from users.views import LoginView
-
+from users.views import LogoutView
 urlpatterns = [
     #photos urls
     url(r'^admin/', admin.site.urls),
@@ -31,7 +31,7 @@ urlpatterns = [
     url(r'^photos/new$',photos.views.create,name='create_photo'),
     #users urls
     url(r'^login$',LoginView.as_view(),name='users_login'),
-    url(r'^logout$',users.views.logout,name='users_logout')
+    url(r'^logout$',LogoutView.as_view(),name='users_logout')
 ]
 
 

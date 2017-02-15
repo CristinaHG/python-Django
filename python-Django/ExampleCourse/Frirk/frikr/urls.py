@@ -1,3 +1,4 @@
+
 """frikr URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -19,11 +20,13 @@ import photos
 from photos import views
 import users
 from users import views
+from photos.views import HomeView
+
 
 urlpatterns = [
     #photos urls
     url(r'^admin/', admin.site.urls),
-    url(r'^$', photos.views.home,name='photos_home'),
+    url(r'^$', HomeView.as_view(),name='photos_home'),
     url(r'^photos/(?P<pk>[0-9]+)$',photos.views.detail,name='photo_detail'),
     url(r'^photos/new$',photos.views.create,name='create_photo'),
     #users urls

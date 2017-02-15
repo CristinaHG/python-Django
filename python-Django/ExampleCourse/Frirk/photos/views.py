@@ -12,6 +12,19 @@ from django.db.models import Q
 from photos.forms import PhotoForm
 from photos.models import Photo,PUBLIC
 
+
+class PhotosQuerySet(object):
+
+    def get_photos_queryset(self,request):
+        if not request.user.is_authenticated(): # si no está autnticado
+            photos=Photo.objects.filter(visibility=PUBLIC)
+        elif request.user.is_superuser: # si es admin
+            photos=Photo.objects.all()
+        else:
+            #photos=Photo.objects.filter(owner=request.user,visibility=PUBLIC)
+            photos=Photo.objects.filter(Q(owner=request.user) | Q(visibility=PUBLIC))
+        return photos #no es un array de fotos, es un objeto con la query configurada
+
 class HomeView(View):
 
     def get(self,request):
@@ -29,10 +42,10 @@ class HomeView(View):
 # loads detail page of photo
 # receive request and photo identifier
 
-class DetailView(View):
+class DetailView(View,PhotosQuerySet):
 
     def get(self,request,pk):
-        possible_photos=Photo.objects.filter(pk=pk).select_related('owner')
+        possible_photos=self.get_photos_queryset(request).filter(pk=pk).select_related('owner')
         photo=possible_photos[0] if len(possible_photos)==1 else None
         #if photo exits, load template, else error
         if photo is not None:
@@ -91,7 +104,7 @@ class CreateView(View):
         return render(request,'photos/new_photo.html',context)
 
 
-class ListView(View):
+class ListView(View,PhotosQuerySet):
 
     def get(self,request):
 
@@ -103,15 +116,9 @@ class ListView(View):
         :param request: HttpRequest
         :return: HttpResponse
         """
-        if not request.user.is_authenticated(): # si no está autnticado
-            photos=Photo.objects.filter(visibility=PUBLIC)
-        elif request.user.is_superuser: # si es admin
-            photos=Photo.objects.all()
-        else:
-            #photos=Photo.objects.filter(owner=request.user,visibility=PUBLIC)
-            photos=Photo.objects.filter(Q(owner=request.user) | Q(visibility=PUBLIC))
+
         context={
-            'photos':photos
+            'photos':self.get_photos_queryset(request)
         }
 
         return render(request,'photos/photos_list.html',context)

@@ -5,23 +5,26 @@ from django.http import HttpResponseNotFound
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
+from django.views.generic import View
+
 
 # Create your views here.
 from photos.forms import PhotoForm
 from photos.models import Photo,PUBLIC
 
+class HomeView(View):
 
-def home(request):
-    photos=Photo.objects.filter(visibility=PUBLIC).order_by('-created_at')
-    # html='<ul>'
-    # for photo in photos:
-    #     html+='<li>'+photo.name+'</li>'
-    # html+='</ul>'
-    # return HttpResponse(html)
-    context={
-        'photos_list': photos[:5]
-    }
-    return render(request,'photos/home.html',context)
+    def get(self,request):
+        photos=Photo.objects.filter(visibility=PUBLIC).order_by('-created_at')
+        # html='<ul>'
+        # for photo in photos:
+        #     html+='<li>'+photo.name+'</li>'
+        # html+='</ul>'
+        # return HttpResponse(html)
+        context={
+            'photos_list': photos[:5]
+        }
+        return render(request,'photos/home.html',context)
 
 # loads detail page of photo
 # receive request and photo identifier

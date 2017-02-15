@@ -6,7 +6,7 @@ from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.views.generic import View
-
+from django.utils.decorators import method_decorator
 
 # Create your views here.
 from photos.forms import PhotoForm
@@ -46,7 +46,7 @@ class DetailView(View):
 
 
 class CreateView(View):
-    @login_required()
+    @method_decorator(login_required())
     def get(self,request):
         """
         muestra un form para crear una foto
@@ -63,7 +63,7 @@ class CreateView(View):
         return render(request,'photos/new_photo.html',context)
 
 
-    @login_required()
+    @method_decorator(login_required())
     def post(self,request):
         """
          crea una foto en base a la información POST

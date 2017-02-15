@@ -5,7 +5,7 @@ from django.http import HttpResponseNotFound
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
-from django.views.generic import View
+from django.views.generic import View,ListView
 from django.utils.decorators import method_decorator
 from django.db.models import Q
 # Create your views here.
@@ -104,7 +104,7 @@ class CreateView(View):
         return render(request,'photos/new_photo.html',context)
 
 
-class ListView(View,PhotosQuerySet):
+class PhotoListView(View,PhotosQuerySet):
 
     def get(self,request):
 
@@ -125,9 +125,13 @@ class ListView(View,PhotosQuerySet):
 
 
 
+class UserPhotosView(ListView):
+    model = Photo
+    template_name = 'photos/user_photos.html'
 
-
-
+    def get_queryset(self):
+       queryset= super(UserPhotosView,self).get_queryset()
+       return queryset.filter(owner=self.request.user)
 
 
 

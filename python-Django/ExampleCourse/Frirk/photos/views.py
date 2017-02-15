@@ -28,18 +28,21 @@ class HomeView(View):
 
 # loads detail page of photo
 # receive request and photo identifier
-def detail(request,pk):
-    possible_photos=Photo.objects.filter(pk=pk).select_related('owner')
-    photo=possible_photos[0] if len(possible_photos)==1 else None
-    #if photo exits, load template, else error
-    if photo is not None:
-        #load detail template
-        context={
-            'photo':photo
-        }
-        return render(request,'photos/detail.html',context)
-    else:
-        return HttpResponseNotFound('No existe la foto') # 404 nto found
+
+class DetailView(View):
+
+    def get(self,request,pk):
+        possible_photos=Photo.objects.filter(pk=pk).select_related('owner')
+        photo=possible_photos[0] if len(possible_photos)==1 else None
+        #if photo exits, load template, else error
+        if photo is not None:
+            #load detail template
+            context={
+                'photo':photo
+            }
+            return render(request,'photos/detail.html',context)
+        else:
+            return HttpResponseNotFound('No existe la foto') # 404 nto found
 
 
 @login_required()

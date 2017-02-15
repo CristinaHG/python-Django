@@ -45,19 +45,34 @@ class DetailView(View):
             return HttpResponseNotFound('No existe la foto') # 404 nto found
 
 
-@login_required()
-def create(request):
-    """
-    muestra un form para crear una foto y la crea si la petición es post
-     :param request: HttpRequest
-     :return: HttpResponse
-    """
+class CreateView(View):
+    @login_required()
+    def get(self,request):
+        """
+        muestra un form para crear una foto
+         :param request: HttpRequest
+         :return: HttpResponse
+        """
 
-    success_message=''
-
-    if request.method=='GET':
         form=PhotoForm()
-    else:
+        context={
+            'form':form,
+            'success_message': ''
+        }
+
+        return render(request,'photos/new_photo.html',context)
+
+
+    @login_required()
+    def post(self,request):
+        """
+         crea una foto en base a la información POST
+         :param request: HttpRequest
+         :return: HttpResponse
+        """
+
+        success_message=''
+
         photo_with_owner=Photo()
         photo_with_owner.owner=request.user #asigno como propietario de la foto al usuario atuenticado
         form=PhotoForm(request.POST,instance=photo_with_owner) #especificar instancia de foto a utilizar por el formulario
@@ -68,11 +83,9 @@ def create(request):
             success_message+='<a href="{0}">'.format(reverse('photo_detail',args=[new_photo.pk]))
             success_message+='Ver foto'
             success_message+='</a>'
-    context={
-        'form':form,
-        'success_message': success_message
-    }
+        context={
+            'form':form,
+            'success_message': success_message
+        }
 
-
-
-    return render(request,'photos/new_photo.html',context)
+        return render(request,'photos/new_photo.html',context)

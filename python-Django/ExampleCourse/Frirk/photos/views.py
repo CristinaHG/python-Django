@@ -26,7 +26,7 @@ def home(request):
 # loads detail page of photo
 # receive request and photo identifier
 def detail(request,pk):
-    possible_photos=Photo.objects.filter(pk=pk)
+    possible_photos=Photo.objects.filter(pk=pk).select_related('owner')
     photo=possible_photos[0] if len(possible_photos)==1 else None
     #if photo exits, load template, else error
     if photo is not None:

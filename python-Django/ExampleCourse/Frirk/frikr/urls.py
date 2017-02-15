@@ -20,14 +20,15 @@ import photos
 from photos import views
 import users
 from users import views
-from photos.views import HomeView
-from users.views import LoginView
-from users.views import LogoutView
+from photos.views import HomeView,DetailView
+from users.views import LoginView, LogoutView
+
+
 urlpatterns = [
     #photos urls
     url(r'^admin/', admin.site.urls),
     url(r'^$', HomeView.as_view(),name='photos_home'),
-    url(r'^photos/(?P<pk>[0-9]+)$',photos.views.detail,name='photo_detail'),
+    url(r'^photos/(?P<pk>[0-9]+)$',DetailView.as_view(),name='photo_detail'),
     url(r'^photos/new$',photos.views.create,name='create_photo'),
     #users urls
     url(r'^login$',LoginView.as_view(),name='users_login'),

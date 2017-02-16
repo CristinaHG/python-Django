@@ -21,6 +21,17 @@ class UserSerializer(serializers.Serializer):
         """
 
         instance=User()
+        return self.update(instance,validated_data)
+
+
+    def update(self, instance, validated_data):
+        """
+        Actualiza una instancia de User a partir de los datos
+        del diccionario validated_data que contiene valores deserializados
+        :param instance: objeto User a actualizar
+        :param validated_data: diccionario con nuevos vallores para el User
+        :return: objeto User actualizado
+        """
         instance.first_name=validated_data.get('first_name')
         instance.last_name=validated_data.get('last_name')
         instance.username=validated_data.get('username')
@@ -29,6 +40,3 @@ class UserSerializer(serializers.Serializer):
         instance.save()
 
         return instance
-
-
-    

@@ -7,6 +7,8 @@ from rest_framework.response import Response
 from users.serializers import UserSerializer
 from rest_framework.renderers import JSONRenderer
 from django.shortcuts import get_object_or_404
+from rest_framework import status
+
 
 class UserListAPI(APIView):
 
@@ -18,6 +20,15 @@ class UserListAPI(APIView):
         # json_users=renderer.render(serialized_users) #lista de diccionarios-> JSON
         # return HttpResponse(json_users)
         return Response(serialized_users)
+
+    def post(self,request):
+        serializer=UserSerializer(data=request.POST)
+        if serializer.is_valid():
+            new_user=serializer.save()
+            return Response(serializer.data,status=status.HTTP_201_CREATED) #optional
+        else:
+            return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+
 
 class UserDetailAPI(APIView):
 

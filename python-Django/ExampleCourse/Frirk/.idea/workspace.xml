@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/users/api.py" line="18" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/users/api.py" line="20" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e58f873-8ade-4873-8e13-e80e1d2979c2" name="Default" comment="" />
@@ -65,7 +65,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/users/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="422">
@@ -87,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="api.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="api.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/users/api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+            <state relative-caret-position="465">
+              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="e#23#66#0" expanded="true" />
               </folding>
@@ -172,8 +172,8 @@
         <option value="$PROJECT_DIR$/photos/admin.py" />
         <option value="$PROJECT_DIR$/frikr/settings.py" />
         <option value="$PROJECT_DIR$/frikr/urls.py" />
-        <option value="$PROJECT_DIR$/users/api.py" />
         <option value="$PROJECT_DIR$/users/serializers.py" />
+        <option value="$PROJECT_DIR$/users/api.py" />
       </list>
     </option>
   </component>
@@ -1051,12 +1051,12 @@
       <workItem from="1487148759915" duration="10283000" />
       <workItem from="1487175249609" duration="7173000" />
       <workItem from="1487234680603" duration="6009000" />
-      <workItem from="1487260825409" duration="2963000" />
+      <workItem from="1487260825409" duration="3504000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72366000" />
+    <option name="totallyTimeSpent" value="72907000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1365" y="0" width="1922" height="1080" extended-state="7" />
@@ -1503,22 +1503,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/users/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-          <folding>
-            <element signature="e#23#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/users/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="422">
           <caret line="46" column="52" lean-forward="false" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
           <folding>
             <element signature="e#23#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#66#0" expanded="true" />
           </folding>
         </state>
       </provider>

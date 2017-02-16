@@ -8,7 +8,7 @@ class UserSerializer(serializers.Serializer):
     first_name=serializers.CharField()
     last_name=serializers.CharField()
     username=serializers.CharField()
-    email=serializers.CharField()
+    email=serializers.EmailField()
     password=serializers.CharField()
 
 
@@ -40,3 +40,16 @@ class UserSerializer(serializers.Serializer):
         instance.save()
 
         return instance
+
+
+    def validate_username(self, data):
+        """
+        valida si existe un usuario con ese username
+        :param data:
+        :return:
+        """
+        users=User.objects.filter(username=data)
+        if len(users)!=0:
+            raise serializers.ValidationError("Ya existe un usuario con ese username")
+        else:
+            return data

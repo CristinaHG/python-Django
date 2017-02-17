@@ -1,7 +1,7 @@
 # -*- coding=utf-8 -*-
 from rest_framework import serializers
 from django.contrib.auth.models import User
-
+from django.contrib.auth.password_validation import validate_password as validate_password_django
 class UserSerializer(serializers.Serializer):
 
     id=serializers.ReadOnlyField() #read only field
@@ -53,3 +53,7 @@ class UserSerializer(serializers.Serializer):
             raise serializers.ValidationError("Ya existe un usuario con ese username")
         else:
             return data
+
+
+    def validate_password(self, data):
+        validate_password_django(data)

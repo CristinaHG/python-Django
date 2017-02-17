@@ -36,3 +36,13 @@ class UserDetailAPI(APIView):
         user=get_object_or_404(User,pk=pk) #si existe usuario con clave igual a pk lo devuelve,sino devuelve él un 404
         serializer=UserSerializer(user)
         return Response(serializer.data)
+
+
+    def put(self,request,pk):
+        user=get_object_or_404(User,pk=pk)
+        serializer=UserSerializer(instance=user,data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data,status=status.HTTP_200_OK)
+        else:
+            return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)

@@ -49,11 +49,23 @@ class UserSerializer(serializers.Serializer):
         :return:
         """
         users=User.objects.filter(username=data)
-        if len(users)!=0:
+
+        # Si estoy creando( no hay instancia), comprobar si hay usuarios con ese username
+        if not self.instance and len(users)!=0:
             raise serializers.ValidationError("Ya existe un usuario con ese username")
+        #si estoy actualizando, el nuevo username es diferente al de la instancia(está cambiando el username)
+        # y existen usuarios ya registrados con el nuevo username
+        elif  self.instance and self.instance.username !=data and len(users)!=0:
+            raise serializers.ValidationError("Ya existe un usuario con ese username")
+
         else:
             return data
 
 
     def validate_password(self, data):
+        """
+        valida que la contraseña cumpla una seguridad minima
+        :param data:
+        :return:
+        """
         validate_password_django(data)

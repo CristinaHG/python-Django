@@ -19,7 +19,7 @@ from django.contrib import admin
 import photos
 from photos import views
 import users
-from photos.api import PhotoListAPI
+from photos.api import PhotoListAPI,PhotoDetailAPI
 from users import views
 from photos.views import HomeView,DetailView,CreateView,PhotoListView,UserPhotosView
 from users.api import UserListAPI,UserDetailAPI
@@ -45,6 +45,7 @@ urlpatterns = [
 
     #Photos API URLs
     url(r'^api/1.0/photos/$',PhotoListAPI.as_view(),name='photo_list_api'),
+    url(r'^api/1.0/photos/(?P<pk>[0-9]+)$',PhotoDetailAPI.as_view(),name='photo_detail_api'),
 ]
 
 

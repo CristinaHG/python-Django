@@ -157,3 +157,10 @@ LICENSES=(
 
 #Define badwords
 PROJECT_BADWORDS=[u'Abollao',u'Abrazafarolas',u'Afilasables',u'Analfabestia',u'Apollardao',u'Arrollapastos',u'Asaltapozos',u'Caracartón']
+
+#REST FRAMEWORK SETTINGS
+
+REST_FRAMEWORK={
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE':3
+}

@@ -13,20 +13,20 @@ class PhotoForm(forms.ModelForm):
         exclude=['owner']
 
 
-    def clean(self):
-        """
-        valida si en la descripción se han puesto tacos definidos en settings BADWORDS
-        :return: diccionario con los atributos
-        """
-
-        cleaned_data=super(PhotoForm,self).clean()
-
-        description=cleaned_data.get('description','')
-
-        for badword in BADWORDS:
-            if badword.lower() in description:
-                raise ValidationError(u'La palabra {0} no está permitida'.format(badword))
-
-
-        #si todo va ok devuelvo datos limpios
-        return cleaned_data
+    # def clean(self):
+    #     """
+    #     valida si en la descripción se han puesto tacos definidos en settings BADWORDS
+    #     :return: diccionario con los atributos
+    #     """
+    #
+    #     cleaned_data=super(PhotoForm,self).clean()
+    #
+    #     description=cleaned_data.get('description','')
+    #
+    #     for badword in BADWORDS:
+    #         if badword.lower() in description:
+    #             raise ValidationError(u'La palabra {0} no está permitida'.format(badword))
+    #
+    #
+    #     #si todo va ok devuelvo datos limpios
+    #     return cleaned_data

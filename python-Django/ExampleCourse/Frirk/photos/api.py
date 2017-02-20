@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from photos.models import Photo
 from photos.serializers import PhotoSerializer, PhotoListSerializer
 from rest_framework.generics import ListCreateAPIView,RetrieveUpdateDestroyAPIView
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 # class PhotoListAPI(APIView):
 #
@@ -14,6 +15,7 @@ from rest_framework.generics import ListCreateAPIView,RetrieveUpdateDestroyAPIVi
 
 class PhotoListAPI(ListCreateAPIView):
     queryset = Photo.objects.all()
+    permission_classes = (IsAuthenticatedOrReadOnly,)
     #serializer_class = PhotoListSerializer
 
     def get_serializer_class(self):
@@ -23,4 +25,5 @@ class PhotoListAPI(ListCreateAPIView):
 class PhotoDetailAPI(RetrieveUpdateDestroyAPIView):
     queryset = Photo.objects.all()
     serializer_class = PhotoSerializer
+    permission_classes = (IsAuthenticatedOrReadOnly,)
 

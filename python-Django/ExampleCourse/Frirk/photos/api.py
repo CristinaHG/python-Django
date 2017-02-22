@@ -12,14 +12,21 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 #         photos=Photo.objects.all()
 #         serializer=PhotoSerializer(photos,many=True)
 #         return Response(serializer.data)
+from photos.views import PhotosQuerySet
 
-class PhotoListAPI(ListCreateAPIView):
+
+class PhotoListAPI(PhotosQuerySet,ListCreateAPIView):
     queryset = Photo.objects.all()
     permission_classes = (IsAuthenticatedOrReadOnly,)
     #serializer_class = PhotoListSerializer
 
     def get_serializer_class(self):
         return PhotoSerializer if self.request.method=="POST" else PhotoListSerializer
+
+    def get_queryset(self):
+        return self.get_photos_queryset(self.request)
+
+
 
 
 class PhotoDetailAPI(RetrieveUpdateDestroyAPIView):

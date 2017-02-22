@@ -43,14 +43,20 @@ class UserListAPI(APIView):
 
 class UserDetailAPI(APIView):
 
+    permission_classes = (UserPermission,)
+
     def get(self,request,pk):
+        self.check_permissions(request)# if fails ,next petition to DataBase is not performed
         user=get_object_or_404(User,pk=pk) #si existe usuario con clave igual a pk lo devuelve,sino devuelve él un 404
+        self.check_object_permissions(request,user)
         serializer=UserSerializer(user)
         return Response(serializer.data)
 
 
     def put(self,request,pk):
+        self.check_permissions(request)
         user=get_object_or_404(User,pk=pk)
+        self.check_object_permissions(request,user)
         serializer=UserSerializer(instance=user,data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -60,6 +66,8 @@ class UserDetailAPI(APIView):
 
 
     def delete(self,request,pk):
+        self.check_permissions(request)
         user=get_object_or_404(User,pk=pk)
+        self.check_object_permissions(request,user)
         user.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)

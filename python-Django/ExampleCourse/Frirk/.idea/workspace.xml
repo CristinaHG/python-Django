@@ -2,7 +2,7 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/users/api.py" line="28" mnemonic="3" />
-    <bookmark url="file://$PROJECT_DIR$/photos/api.py" line="13" mnemonic="7" />
+    <bookmark url="file://$PROJECT_DIR$/photos/api.py" line="15" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e58f873-8ade-4873-8e13-e80e1d2979c2" name="Default" comment="" />
@@ -29,8 +29,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frikr/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2370">
-              <caret line="158" column="59" lean-forward="false" selection-start-line="158" selection-start-column="48" selection-end-line="158" selection-end-column="59" />
+            <state relative-caret-position="539">
+              <caret line="167" column="18" lean-forward="false" selection-start-line="167" selection-start-column="18" selection-end-line="167" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -39,9 +39,11 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frikr/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="24" column="48" lean-forward="false" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
-              <folding />
+            <state relative-caret-position="479">
+              <caret line="53" column="20" lean-forward="false" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+              <folding>
+                <element signature="e#640#681#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -56,7 +58,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="api.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="api.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/users/api.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="404">
@@ -80,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="api.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="api.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/photos/api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="30" column="47" lean-forward="false" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
+            <state relative-caret-position="225">
+              <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="18" />
               <folding>
                 <element signature="e#24#64#0" expanded="true" />
               </folding>
@@ -150,6 +152,7 @@
     <findStrings>
       <find>license</find>
       <find>validate_username</find>
+      <find>append</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -175,15 +178,15 @@
         <option value="$PROJECT_DIR$/env/local/lib/python2.7/site-packages/django/core/management/base.py" />
         <option value="$PROJECT_DIR$/photos/admin.py" />
         <option value="$PROJECT_DIR$/users/serializers.py" />
-        <option value="$PROJECT_DIR$/frikr/settings.py" />
         <option value="$PROJECT_DIR$/photos/validators.py" />
         <option value="$PROJECT_DIR$/photos/forms.py" />
         <option value="$PROJECT_DIR$/photos/models.py" />
-        <option value="$PROJECT_DIR$/photos/api.py" />
         <option value="$PROJECT_DIR$/photos/serializers.py" />
-        <option value="$PROJECT_DIR$/frikr/urls.py" />
         <option value="$PROJECT_DIR$/users/permissions.py" />
         <option value="$PROJECT_DIR$/users/api.py" />
+        <option value="$PROJECT_DIR$/photos/api.py" />
+        <option value="$PROJECT_DIR$/frikr/urls.py" />
+        <option value="$PROJECT_DIR$/frikr/settings.py" />
       </list>
     </option>
   </component>
@@ -1013,7 +1016,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97214000" />
+    <option name="totallyTimeSpent" value="99477000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1365" y="0" width="1922" height="1080" extended-state="6" />
@@ -1123,7 +1126,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#640#681#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1404,14 +1409,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frikr/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2370">
-          <caret line="158" column="59" lean-forward="false" selection-start-line="158" selection-start-column="48" selection-end-line="158" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/photos/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-678">
@@ -1438,14 +1435,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frikr/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="24" column="48" lean-forward="false" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/django/core/management/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -1464,22 +1453,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/photos/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="30" column="47" lean-forward="false" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
-          <folding>
-            <element signature="e#24#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/users/api.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
           <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding>
             <element signature="e#23#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frikr/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="53" column="20" lean-forward="false" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+          <folding>
+            <element signature="e#640#681#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frikr/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="167" column="18" lean-forward="false" selection-start-line="167" selection-start-column="18" selection-end-line="167" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photos/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="18" />
+          <folding>
+            <element signature="e#24#64#0" expanded="true" />
           </folding>
         </state>
       </provider>

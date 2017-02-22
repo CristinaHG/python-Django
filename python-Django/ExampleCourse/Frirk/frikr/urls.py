@@ -14,17 +14,24 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
+from rest_framework.routers import DefaultRouter
+
 import photos
 from photos import views
 import users
-from photos.api import PhotoListAPI,PhotoDetailAPI
+#from photos.api import PhotoListAPI,PhotoDetailAPI
+from photos.api import PhotoViewSet
 from users import views
 from photos.views import HomeView,DetailView,CreateView,PhotoListView,UserPhotosView
 from users.api import UserListAPI, UserDetailAPI
 from users.views import LoginView, LogoutView
 from django.contrib.auth.decorators import login_required
+
+#APIRouter
+router=DefaultRouter()
+router.register(r'api/1.0/photos',PhotoViewSet) #regiter photos url
 
 urlpatterns = [
     #photos urls
@@ -44,8 +51,7 @@ urlpatterns = [
     url(r'^api/1.0/users/(?P<pk>[0-9]+)$',UserDetailAPI.as_view(),name='user_detail_api'),
 
     #Photos API URLs
-    url(r'^api/1.0/photos/$',PhotoListAPI.as_view(),name='photo_list_api'),
-    url(r'^api/1.0/photos/(?P<pk>[0-9]+)$',PhotoDetailAPI.as_view(),name='photo_detail_api'),
+    url(r'' ,include(router.urls)), #incluyo urls de API
+    # url(r'^api/1.0/photos/$',PhotoListAPI.as_view(),name='photo_list_api'),
+    # url(r'^api/1.0/photos/(?P<pk>[0-9]+)$',PhotoDetailAPI.as_view(),name='photo_detail_api'),
 ]
-
-

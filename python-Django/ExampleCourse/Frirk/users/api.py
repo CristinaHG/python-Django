@@ -9,10 +9,14 @@ from rest_framework.renderers import JSONRenderer
 from django.shortcuts import get_object_or_404
 from rest_framework import status
 from rest_framework.pagination import PageNumberPagination
+from users.permissions import UserPermission
 
 class UserListAPI(APIView):
 
+    permission_classes = (UserPermission,)
+
     def get(self,request):
+        self.check_permissions(request)
         #instancio paginador
         paginator=PageNumberPagination()
         users=User.objects.all() #devuelve un queryset
@@ -28,6 +32,7 @@ class UserListAPI(APIView):
         return paginator.get_paginated_response(serialized_users)
 
     def post(self,request):
+        self.check_permissions(request)
         serializer=UserSerializer(data=request.data)
         if serializer.is_valid():
             new_user=serializer.save()

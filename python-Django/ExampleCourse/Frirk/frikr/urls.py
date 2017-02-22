@@ -22,7 +22,7 @@ import users
 from photos.api import PhotoListAPI,PhotoDetailAPI
 from users import views
 from photos.views import HomeView,DetailView,CreateView,PhotoListView,UserPhotosView
-from users.api import UserListAPI,UserDetailAPI
+from users.api import UserListAPI, UserDetailAPI
 from users.views import LoginView, LogoutView
 from django.contrib.auth.decorators import login_required
 

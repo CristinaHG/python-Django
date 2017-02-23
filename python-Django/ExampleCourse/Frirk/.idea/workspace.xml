@@ -2,7 +2,7 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/users/api.py" line="89" mnemonic="3" />
-    <bookmark url="file://$PROJECT_DIR$/photos/api.py" line="15" mnemonic="7" />
+    <bookmark url="file://$PROJECT_DIR$/photos/api.py" line="16" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e58f873-8ade-4873-8e13-e80e1d2979c2" name="Default" comment="" />
@@ -15,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/frirk$Runserver.coverage" NAME="Runserver Coverage Results" MODIFIED="1487869263020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/frirk$Runserver.coverage" NAME="Runserver Coverage Results" MODIFIED="1487873755310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -36,7 +36,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frikr/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -128,13 +128,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="api.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="api.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/photos/api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+            <state relative-caret-position="285">
+              <caret line="23" column="50" lean-forward="false" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
               <folding>
-                <element signature="e#24#64#0" expanded="true" />
+                <element signature="e#24#87#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -184,7 +184,6 @@
         <option value="$PROJECT_DIR$/photos/forms.py" />
         <option value="$PROJECT_DIR$/photos/models.py" />
         <option value="$PROJECT_DIR$/photos/serializers.py" />
-        <option value="$PROJECT_DIR$/photos/api.py" />
         <option value="$PROJECT_DIR$/users/permissions.py" />
         <option value="$PROJECT_DIR$/frikr/settings.py" />
         <option value="$PROJECT_DIR$/photos/urls.py" />
@@ -193,6 +192,7 @@
         <option value="$PROJECT_DIR$/photos/api_urls.py" />
         <option value="$PROJECT_DIR$/frikr/urls.py" />
         <option value="$PROJECT_DIR$/users/api.py" />
+        <option value="$PROJECT_DIR$/photos/api.py" />
       </list>
     </option>
   </component>
@@ -1020,12 +1020,12 @@
       <workItem from="1487779439178" duration="3556000" />
       <workItem from="1487852879046" duration="10000" />
       <workItem from="1487866096922" duration="2420000" />
-      <workItem from="1487869209440" duration="3500000" />
+      <workItem from="1487869209440" duration="4453000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105556000" />
+    <option name="totallyTimeSpent" value="106509000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1365" y="0" width="1922" height="1080" extended-state="6" />
@@ -1471,16 +1471,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/photos/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-          <folding>
-            <element signature="e#24#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frikr/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-996">
@@ -1495,6 +1485,16 @@
           <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
           <folding>
             <element signature="e#24#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photos/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="23" column="50" lean-forward="false" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+          <folding>
+            <element signature="e#24#87#0" expanded="true" />
           </folding>
         </state>
       </provider>

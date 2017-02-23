@@ -17,13 +17,13 @@ class UserPermission(BasePermission):
         """
 
         # si quiere crear un usuario, sea quien sea puede
-        if request.method=="POST":
+        if view.action=='create':
             return True
         # si no es POST, el superusuario siempre puede
         elif request.user.is_superuser:
             return True
         # si es un GET a la vista de detalle, tomo la decisión en has_object_permission
-        elif isinstance(view, users.api.UserDetailAPI):
+        elif view.action in ['retrieve','update','destroy']:
             True
         else:
             # GET a /api/1.0/users/

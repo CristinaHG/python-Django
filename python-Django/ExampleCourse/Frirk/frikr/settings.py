@@ -27,6 +27,8 @@ SECRET_KEY = 'w3g@n1q*4zs^o(t8&-6@m6x@e^9i7cp1l#!39)w9n$@ua4c%z2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+APPEND_SLASH = False,
+
 ALLOWED_HOSTS = []
 
 
@@ -165,4 +167,3 @@ REST_FRAMEWORK={
     'PAGE_SIZE':3
 }
 
-APPEND_SLASH=False

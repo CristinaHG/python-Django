@@ -1,3 +1,4 @@
+# -*- coding=utf-8 -*-
 
 """frikr URL Configuration
 
@@ -25,13 +26,16 @@ import users
 from photos.api import PhotoViewSet
 from users import views
 from photos.views import HomeView,DetailView,CreateView,PhotoListView,UserPhotosView
-from users.api import UserListAPI, UserDetailAPI
+#from users.api import UserListAPI, UserDetailAPI
+from users.api import UserViewSet
 from users.views import LoginView, LogoutView
 from django.contrib.auth.decorators import login_required
 
 #APIRouter
 router=DefaultRouter()
 router.register(r'api/1.0/photos',PhotoViewSet) #regiter photos url
+router.register(r'api/1.0/users',UserViewSet,base_name='user') #register users url
+
 
 urlpatterns = [
     #photos urls
@@ -47,11 +51,12 @@ urlpatterns = [
     url(r'^logout$',LogoutView.as_view(),name='users_logout'),
 
     #users API URLs
-    url(r'^api/1.0/users/$',UserListAPI.as_view(),name='user_list_api'),
-    url(r'^api/1.0/users/(?P<pk>[0-9]+)$',UserDetailAPI.as_view(),name='user_detail_api'),
+
+    # url(r'^api/1.0/users/$',UserListAPI.as_view(),name='user_list_api'),
+    # url(r'^api/1.0/users/(?P<pk>[0-9]+)$',UserDetailAPI.as_view(),name='user_detail_api'),
 
     #Photos API URLs
-    url(r'' ,include(router.urls)), #incluyo urls de API
+    url(r'' ,include(router.urls)), #incluyo urls de API (photos y users porqe van a través del router)
     # url(r'^api/1.0/photos/$',PhotoListAPI.as_view(),name='photo_list_api'),
     # url(r'^api/1.0/photos/(?P<pk>[0-9]+)$',PhotoDetailAPI.as_view(),name='photo_detail_api'),
 ]

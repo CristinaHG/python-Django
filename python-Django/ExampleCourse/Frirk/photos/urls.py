@@ -15,15 +15,9 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
-from rest_framework.routers import DefaultRouter
-from photos.api import PhotoViewSet
+from django.conf.urls import url
 from photos.views import HomeView,DetailView,CreateView,PhotoListView,UserPhotosView
 from django.contrib.auth.decorators import login_required
-
-#APIRouter
-router=DefaultRouter()
-router.register(r'api/1.0/photos',PhotoViewSet) #regiter photos url
 
 
 urlpatterns = [
@@ -33,7 +27,4 @@ urlpatterns = [
     url(r'^photos/$',PhotoListView.as_view(),name='photos_list'),
     url(r'^photos/(?P<pk>[0-9]+)$',DetailView.as_view(),name='photo_detail'),
     url(r'^photos/new$',CreateView.as_view(),name='create_photo'),
-
-    #Photos API URLs
-    url(r'' ,include(router.urls)), #incluyo urls de API (photos y users porqe van a través del router)
 ]

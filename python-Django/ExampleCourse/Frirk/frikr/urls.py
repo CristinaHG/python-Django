@@ -11,8 +11,8 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     # Users urls
     url(r'',include(users_urls)),
-    url(r'',include(users_api_urls)),
+    url(r'api/',include(users_api_urls)),
     #photos urls
     url(r'',include(photos_urls)),
-    url(r'',include(photos_api_urls)),
+    url(r'api/',include(photos_api_urls)),
 ]

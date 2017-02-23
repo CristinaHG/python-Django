@@ -1,62 +1,18 @@
 # -*- coding=utf-8 -*-
 
-"""frikr URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.10/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.conf.urls import url, include
-    2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
-"""
 from django.conf.urls import url, include
 from django.contrib import admin
-from rest_framework.routers import DefaultRouter
+from users import urls as users_urls, api_urls as users_api_urls
+from photos import urls as photos_urls, api_urls as photos_api_urls
 
-import photos
-from photos import views
-import users
-#from photos.api import PhotoListAPI,PhotoDetailAPI
-from photos.api import PhotoViewSet
-from users import views
-from photos.views import HomeView,DetailView,CreateView,PhotoListView,UserPhotosView
-#from users.api import UserListAPI, UserDetailAPI
-from users.api import UserViewSet
-from users.views import LoginView, LogoutView
-from django.contrib.auth.decorators import login_required
-
-#APIRouter
-router=DefaultRouter()
-router.register(r'api/1.0/photos',PhotoViewSet) #regiter photos url
-router.register(r'api/1.0/users',UserViewSet,base_name='user') #register users url
 
 
 urlpatterns = [
+    url(r'^admin/', include(admin.site.urls)),
+    # Users urls
+    url(r'',include(users_urls)),
+    url(r'',include(users_api_urls)),
     #photos urls
-    url(r'^admin/', admin.site.urls),
-    url(r'^$', HomeView.as_view(),name='photos_home'),
-    url(r'^my-photos/$',login_required(UserPhotosView.as_view()),name='user_photos'),
-    url(r'^photos/$',PhotoListView.as_view(),name='photos_list'),
-    url(r'^photos/(?P<pk>[0-9]+)$',DetailView.as_view(),name='photo_detail'),
-    url(r'^photos/new$',CreateView.as_view(),name='create_photo'),
-
-    #users urls
-    url(r'^login$',LoginView.as_view(),name='users_login'),
-    url(r'^logout$',LogoutView.as_view(),name='users_logout'),
-
-    #users API URLs
-
-    # url(r'^api/1.0/users/$',UserListAPI.as_view(),name='user_list_api'),
-    # url(r'^api/1.0/users/(?P<pk>[0-9]+)$',UserDetailAPI.as_view(),name='user_detail_api'),
-
-    #Photos API URLs
-    url(r'' ,include(router.urls)), #incluyo urls de API (photos y users porqe van a través del router)
-    # url(r'^api/1.0/photos/$',PhotoListAPI.as_view(),name='photo_list_api'),
-    # url(r'^api/1.0/photos/(?P<pk>[0-9]+)$',PhotoDetailAPI.as_view(),name='photo_detail_api'),
+    url(r'',include(photos_urls)),
+    url(r'',include(photos_api_urls)),
 ]
